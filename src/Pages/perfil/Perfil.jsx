@@ -3,7 +3,7 @@ import './perfil.css';
 import Foto from '../../Assets/fundos/artigo.jpg'
 import { useContext, useState, useEffect } from "react";
 import { Context } from "../../Context/Context";
-import axios from "axios";
+import { axiosInstance } from '../../config.js';
 import Footer from '../../Components/footer/Footer.jsx';
 
 
@@ -25,16 +25,16 @@ const Perfil = () => {
   //const [cities, setCities] = useState([]);
 
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images/"
+  const PF = "https://pressclubnode.herokuapp.com/images/"
 
 
   /*useEffect(() => {
     const getCats = async () => {
-        const res = await axios.get("/categories");
+        const res = await axiosInstance.get("/categories");
         setCats(res.data);
     };
     const getCits = async () => {
-      const res = await axios.get("/cities");
+      const res = await axiosInstance.get("/cities");
       setCits(res.data);
     };
     getCits();
@@ -58,11 +58,11 @@ const Perfil = () => {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post("/upload", data);
+        await axiosInstance.post("/upload", data);
       } catch (err) {}
     }
     try {
-      const res = await axios.put("/users/" + user._id, updatedUser);
+      const res = await axiosInstance.put("/users/" + user._id, updatedUser);
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {

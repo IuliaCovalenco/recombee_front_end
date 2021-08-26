@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from "axios";
+import { axiosInstance } from '../../config.js';
 import { useState, useEffect } from "react";
 import './register.css'
 import { Link } from "react-router-dom";
@@ -43,11 +43,11 @@ const Register = () => {
 
   useEffect(() => {
     const getCats = async () => {
-        const res = await axios.get("/categories");
+        const res = await axiosInstance.get("/categories");
         setCats(res.data);
     };
     const getCits = async () => {
-      const res = await axios.get("/cities");
+      const res = await axiosInstance.get("/cities");
       setCits(res.data);
     };
     getCits();
@@ -60,7 +60,7 @@ const Register = () => {
     e.preventDefault();
     setError(false);
     try {
-      const res = await axios.post("/auth/register", {
+      const res = await axiosInstance.post("/auth/register", {
         username,
         email,
         password,

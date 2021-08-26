@@ -1,6 +1,6 @@
 import React from 'react'
 import "./write.css";
-import axios from "axios";
+import { axiosInstance } from '../../config.js';
 import { useEffect, useState, useContext } from "react";
 import { Context } from "../../Context/Context";
 
@@ -23,7 +23,7 @@ const Write = () => {
 
   useEffect(() => {
     const getCats = async () => {
-      const res = await axios.get("/categories");
+      const res = await axiosInstance.get("/categories");
       setCats(res.data);
     };
     getCats();
@@ -31,7 +31,7 @@ const Write = () => {
 
   useEffect(() => {
     const getCits = async () => {
-      const res = await axios.get("/cities");
+      const res = await axiosInstance.get("/cities");
       setCits(res.data);
     };
     getCits();
@@ -60,11 +60,11 @@ const Write = () => {
       data.append("file", file);
       newPost.photo = filename;
       try {
-        await axios.post("/upload", data);
+        await axiosInstance.post("/upload", data);
       } catch (err) {}
     }
     try {
-      const res = await axios.post("/posts", newPost);
+      const res = await axiosInstance.post("/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) {}
   };

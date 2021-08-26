@@ -9,7 +9,7 @@
 
     export default function Topbar() {
         const { user, dispatch } = useContext(Context);
-        const PF = "http://localhost:5000/images/"
+        const PF = "https://pressclubnode.herokuapp.com/images/"
       
    
         const handleLogout = () => {

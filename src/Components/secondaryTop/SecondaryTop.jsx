@@ -1,9 +1,10 @@
 import React from 'react';
 import './secondaryTop.css';
-import axios from "axios";
+
 import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../Context/Context";
+import { axiosInstance } from '../../config';
 
 
 const SecondaryNavbar = () => {
@@ -11,13 +12,13 @@ const SecondaryNavbar = () => {
  const {user} = useContext(Context);
 
  console.log('user ->', user);
-    axios.post('/api/users', {
+    axiosInstance.post('/api/users', {
     user: 'userID'
     })
 
  useEffect(() => {
      const getCats = async () => {
-         const res = await axios.get("/categories");
+         const res = await axiosInstance.get("/categories");
          setCats(res.data);
      };
      getCats();

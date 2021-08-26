@@ -1,7 +1,7 @@
 import React from 'react';
 import SinglePost from "../../Components/singlePost/SinglePost";
-import { useContext, useEffect, useState, useLocation } from "react";
-import axios from "axios";
+import { useContext, useEffect, useState } from "react";
+import { axiosInstance } from '../../config.js';
 import { Context } from "../../Context/Context";
 import Footer from "../../Components/footer/Footer";
 import Posts from "../../Components/posts/Posts";
@@ -27,21 +27,21 @@ const Single = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get("/posts", { 
+      const res = await axiosInstance.get("/posts", { 
         posts: posts.categories
       });
       setPosts(res.data);
       console.log(res.data);
     };
     const fetchRecommendedForUser = async () => {
-      const res = await axios.post("/recommended/recommended/personal", {
+      const res = await axiosInstance.post("/recommended/recommended/personal", {
         user: user._id
       });
       setRecommendedForUser(res.data);
       console.log(res.data);
     };
     const fetchRecommended = async () => {
-      const res = await axios.post("/recommended/recommended/click", {
+      const res = await axiosInstance.post("/recommended/recommended/click", {
         user: user._id,
         postID,
       });

@@ -2,10 +2,11 @@ import React from 'react'
 import Footer from '../../Components/footer/Footer.jsx'
 import Posts from '../../Components/posts/Posts.jsx';
 import './cats.css';
-import axios from "axios";
+
 import { useEffect, useState, useContext} from "react";
 import { Context } from "../../Context/Context";
 import { useLocation } from "react-router";
+import { axiosInstance } from '../../config.js';
 
 
 
@@ -24,25 +25,25 @@ const CatsSaude = () => {
     let arrayresultsSaude = [];
 
     console.log('user ->', user);
-    axios.post('/api/users', {
+    axiosInstance.post('/api/users', {
     user: 'userID'
     })
 
-    //puxar a info com axios //colocar info 
+    //puxar a info com axiosInstance //colocar info 
   useEffect(() => {
     const getCats = async () => {
-      const res = await axios.get("/categories");
+      const res = await axiosInstance.get("/categories");
       setCats(res.data);
     };
     const fetchPosts = async () => {
-      const res = await axios.get("/posts" + search, { 
+      const res = await axiosInstance.get("/posts" + search, { 
         posts: posts.categories
       });
       setPosts(res.data);
       console.log(res.data);
     };
     const fetchRecommendedSaude = async () => {
-      const res = await axios.post("/recommended/recommended/saude", {
+      const res = await axiosInstance.post("/recommended/recommended/saude", {
         user: user._id
       });
       setRecommendedSaude(res.data);
