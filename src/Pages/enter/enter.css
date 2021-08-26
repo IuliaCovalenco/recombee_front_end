@@ -8,7 +8,7 @@
         rgba(255, 255, 255, 0.8),
         rgba(255, 255, 255, 0.8)
       ),
-      url("C:\Users\LIA\Desktop\react_node_press\client\src\Assets\fundos\fundo_registo.png");
+      url("..\src\Assets\fundos\fundo_registo.png");
     background-size: cover;
   
   }
