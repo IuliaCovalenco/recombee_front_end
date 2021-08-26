@@ -1,0 +1,101 @@
+.register {
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url("C:\Users\LIA\Desktop\react_node_press\client\src\Assets\fundos\fundo_registo.png");
+  background-size: cover;
+  }
+  
+  .registerTitle {
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+    padding-bottom: 24px;
+  }
+  
+  .registerForm {
+    width:1000px;
+    background-color: #6872E2;
+    padding: 100px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .registerForm > label {
+    margin: 10px 0;
+    color: white;
+  }
+  
+  .registerInput {
+    color: white;
+    padding: 10px;
+    background-color: #6872E2;
+    border: 2px solid #FFFFFF;
+    border-radius: 14px;
+  }
+  
+  .registerButton {
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-top: 40px;
+    cursor: pointer;
+    color: white;
+    border: 2px solid #FFFFFF;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: #6872E2
+  }
+  
+  .registerLoginButton {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: lightcoral;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+  }
+
+  .catsForm{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 50px;
+    color: white;
+    text-transform: capitalize;
+  }
+
+  .dataForm{
+    display: flex;
+    padding-right:50px;
+    flex-direction: column;
+    width: 50% ;
+  }
+  
+  .dataForm > label {
+    margin: 10px 0;
+    color: white;
+  }
+
+  input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(255, 255, 255);
+    opacity: 1; /* Firefox */
+  }
+  
+  input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(255, 255, 255);
+  }
+  
+  input::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(255, 255, 255);
+  }

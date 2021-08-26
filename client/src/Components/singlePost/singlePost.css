@@ -1,0 +1,155 @@
+.singlePost {
+    flex: 9;
+  }
+  
+  .singlePostWrapper {
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .singlePostWrapper1 {
+    padding-right: 0;
+    padding-left: 0;
+    height: 491px;
+    background-color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .singlePostWrapper2 {
+    padding-top: 80px;
+    padding-right: 6rem;
+    padding-left: 6rem;
+    height: 491px;
+    background-color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .singlePostWrapper3 {
+    padding-top: 64px;
+    padding-right: 6rem;
+    padding-left: 6rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .singlePostImg {
+    width: 100%;
+    height: 240px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  .singlePostTitle {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+  }
+  
+  .singlePostTitleInput {
+    margin: 10px;
+    font-family: "Poopins", sans-serif;
+    font-size: 20px;
+    border: none;
+    color: gray;
+    border-bottom: 1px solid lightgray;
+  }
+  
+  .singlePostTitleInput:focus {
+    outline: none;
+  }
+  
+  .singlePostEdit {
+    float: right;
+    font-size: 16px;
+  }
+  
+  .singlePostIcon {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .singlePostIcon:first-child {
+    color: rgb(0, 0, 0);
+  }
+  
+  .singlePostIcon:last-child {
+    color: rgb(0, 0, 0);
+  }
+  
+  .singlePostInfo {
+    margin-bottom: 43px;
+    font-size: 16px;
+    padding-top: 43;
+    display: flex;
+    flex-direction:column;
+    font-family: "Poppins", 'sans-serif';
+    color: #000000;
+  }
+
+  .singlePostAuthor{
+    padding-top: 46px;
+    width: 100%;
+  }
+
+  .singlePostDate{
+    padding-top: 46px;
+    width: 100%;
+  }
+  .singlePostDesc {
+    color: #666;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  
+  .singlePostDesc::first-letter {
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  
+  .singlePostDescInput {
+    border: none;
+    color: #666;
+    font-size: 18px;
+    line-height: 25px;
+    height: 300px;
+  }
+  
+  .singlePostDescInput:focus {
+    outline: none;
+  }
+  .singlePostButton {
+    position: absolute;
+    top: 300px;
+    right: 0px;
+    color: white;
+    background-color: #6872E2;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .updateCategory {
+    background-color: #6872E2;
+    width: 200px;
+    margin-top: 150px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  
