@@ -2,10 +2,11 @@ import React from 'react'
 import Footer from '../../Components/footer/Footer.jsx'
 import Posts from '../../Components/posts/Posts.jsx';
 import './home.css';
-import axios from "axios";
+
 import { useEffect, useState, useContext} from "react";
 import { Context } from "../../Context/Context";
 import { useLocation } from "react-router";
+import { axiosInstance } from '../../config.js';
 
 
 
@@ -44,74 +45,74 @@ const Homepage = () => {
   
 
     console.log('user ->', user);
-    axios.post('/api/users', {
+    axiosInstance.post('/api/users', {
     user: 'userID'
     })
 
-    //puxar a info com axios //colocar info 
+    //puxar a info com axiosInstance //colocar info 
   useEffect(() => {
     const getCats = async () => {
-      const res = await axios.get("/categories");
+      const res = await axiosInstance.get("/categories");
       setCats(res.data);
     };
     const fetchPosts = async () => {
-      const res = await axios.get("/posts" + search, { 
+      const res = await axiosInstance.get("/posts" + search, { 
         posts: posts.categories
       });
       setPosts(res.data);
       console.log(res.data);
     };
     const fetchRecommended = async () => {
-      const res = await axios.post("/recommended/recommended", {
+      const res = await axiosInstance.post("/recommended/recommended", {
         user: user._id
       });
       setRecommended(res.data);
       console.log(res.data);
     };
     const fetchRecommendedCulture = async () => {
-      const res = await axios.post("/recommended/recommended/culture", {
+      const res = await axiosInstance.post("/recommended/recommended/culture", {
         user: user._id
       });
       setRecommendedCulture(res.data);
       console.log(res.data);
     };
     const fetchRecommendedDesporto = async () => {
-      const res = await axios.post("/recommended/recommended/desporto", {
+      const res = await axiosInstance.post("/recommended/recommended/desporto", {
         user: user._id
       });
       setRecommendedDesporto(res.data);
       console.log(res.data);
     };
     const fetchRecommendedPolitica = async () => {
-      const res = await axios.post("/recommended/recommended/politica", {
+      const res = await axiosInstance.post("/recommended/recommended/politica", {
         user: user._id
       });
       setRecommendedPolitica(res.data);
       console.log(res.data);
     };
     const fetchRecommendedSustentabilidade = async () => {
-      const res = await axios.post("/recommended/recommended/sustentabilidade", {
+      const res = await axiosInstance.post("/recommended/recommended/sustentabilidade", {
         user: user._id
       });
       setRecommendedSustentabilidade(res.data);
       console.log(res.data);
     };
     const fetchRecommendedEconomia = async () => {
-      const res = await axios.post("/recommended/recommended/economia", {
+      const res = await axiosInstance.post("/recommended/recommended/economia", {
         user: user._id
       });
       setRecommendedEconomia(res.data);
       console.log(res.data);
     };
     const fetchRecommendedSaude = async () => {
-      const res = await axios.post("/recommended/recommended/saude", {
+      const res = await axiosInstance.post("/recommended/recommended/saude", {
         user: user._id
       });
       setRecommendedSaude(res.data);
       console.log(res.data);
     };
     const fetchRecommendedTecnologia = async () => {
-      const res = await axios.post("/recommended/recommended/tecnologia", {
+      const res = await axiosInstance.post("/recommended/recommended/tecnologia", {
         user: user._id
       });
       setRecommendedTecnology(res.data);
