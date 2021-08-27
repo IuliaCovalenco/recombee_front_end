@@ -79,49 +79,49 @@
         console.log(res.data);
       };
       const fetchRecommendedCulture = async () => {
-        const res = await axiosInstance.post("/recommended/recommended/culture", {
+        const res = await axiosInstance.post("/recommended/recommended/culture/limit", {
           user: user._id
         });
         setRecommendedCulture(res.data);
         console.log(res.data);
       };
       const fetchRecommendedDesporto = async () => {
-        const res = await axiosInstance.post("/recommended/recommended/desporto", {
+        const res = await axiosInstance.post("/recommended/recommended/desporto/limit", {
           user: user._id
         });
         setRecommendedDesporto(res.data);
         console.log(res.data);
       };
       const fetchRecommendedPolitica = async () => {
-        const res = await axiosInstance.post("/recommended/recommended/politica", {
+        const res = await axiosInstance.post("/recommended/recommended/politica/limit", {
           user: user._id
         });
         setRecommendedPolitica(res.data);
         console.log(res.data);
       };
       const fetchRecommendedSustentabilidade = async () => {
-        const res = await axiosInstance.post("/recommended/recommended/sustentabilidade", {
+        const res = await axiosInstance.post("/recommended/recommended/sustentabilidade/limit", {
           user: user._id
         });
         setRecommendedSustentabilidade(res.data);
         console.log(res.data);
       };
       const fetchRecommendedEconomia = async () => {
-        const res = await axiosInstance.post("/recommended/recommended/economia", {
+        const res = await axiosInstance.post("/recommended/recommended/economia/limit", {
           user: user._id
         });
         setRecommendedEconomia(res.data);
         console.log(res.data);
       };
       const fetchRecommendedSaude = async () => {
-        const res = await axiosInstance.post("/recommended/recommended/saude", {
+        const res = await axiosInstance.post("/recommended/recommended/saude/limit", {
           user: user._id
         });
         setRecommendedSaude(res.data);
         console.log(res.data);
       };
       const fetchRecommendedTecnologia = async () => {
-        const res = await axiosInstance.post("/recommended/recommended/tecnologia", {
+        const res = await axiosInstance.post("/recommended/recommended/tecnologia/limit", {
           user: user._id
         });
         setRecommendedTecnology(res.data);
