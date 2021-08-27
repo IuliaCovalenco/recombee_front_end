@@ -17,6 +17,11 @@ const Write = () => {
   const [cits, setCits] = useState([]);
   const [cities, setCities] = useState([]);
 
+  const onClick = () => setShowResults(wasOpened => !wasOpened);
+  const onClickCats = () => setShowResultsCats(wasOpened => !wasOpened);
+  const [showResults, setShowResults] = useState(false);
+  const [showResultsCats, setShowResultsCats] = useState(false);
+
 
 
   const [checkedState, setCheckedState] = useState([])
@@ -70,14 +75,15 @@ const Write = () => {
   };
 
     return (
-        <div className="writeCont ">
-            <div className="write">
-     
-            {file && (
+      <>
+        {file && (
         <img className="writeImg w-full" src={URL.createObjectURL(file)} alt="" />
       )}
-  
-      <form className="writeForm container mx-auto" onSubmit={handleSubmit}>
+        <div className="writeCont">
+            <div className="write">
+     
+      <form className="writeForm" onSubmit={handleSubmit}>
+        <div className="titleAndDesc"> 
         <div className="writeFormGroup">
           <label htmlFor="fileInput">
             <i className="writeIcon fas fa-plus"></i>
@@ -104,9 +110,15 @@ const Write = () => {
             onChange={e=>setDesc(e.target.value)}
           ></textarea>
         </div>
+        </div>
 
-        <div className="flex flex-wrap" >
-          <ul className="writeCategory rounded-lg shadow-lg">
+        <div className="catscities  mt-10" >
+        <div className="grid grid-cols-2 justify-items-stretch border-2 rounded-2xl p-2.5 bgCatsCities">
+          <p className="pr-4">Categórias</p>
+          <a onClick={onClickCats} className="fas fa-chevron-down justify-self-end pr-4"></a>
+        </div>
+        {showResultsCats && (
+          <ul className="bgCatsCities rounded-lg shadow-lg">
               {cats.map((cat) => (
               <li>
                   <input
@@ -125,9 +137,14 @@ const Write = () => {
               </li>
               ))}
           </ul>
-
-
-          <ul className="writeCategory rounded-lg mt-52 shadow-lg">
+          )}
+          <div className="mt-1.5">
+          <div className=" grid grid-cols-2 justify-items-stretch border-2 rounded-2xl p-2.5 mt-8 bgCatsCities ">
+                <p className="pr-4">Regiões</p>
+                <a onClick={onClick} className="fas fa-chevron-down justify-self-end pr-4"></a>
+          </div>
+          {showResults && (
+          <ul className="bgCatsCities rounded-lg shadow-lg">
               {cits.map((cit) => (
               <li>
                   <input
@@ -146,7 +163,8 @@ const Write = () => {
               </li>
               ))}
           </ul>
-
+            ) }
+          </div>
         
         <button className="writeSubmit rounded-lg shadow-lg"  style= {{marginTop: '550px'}}type="submit">
           Publish
@@ -157,6 +175,7 @@ const Write = () => {
       </form>
     </div>
         </div>
+        </>
     )
 }
 

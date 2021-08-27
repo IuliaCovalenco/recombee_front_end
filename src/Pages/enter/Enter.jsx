@@ -5,7 +5,20 @@ import { Link } from "react-router-dom";
 import { axiosInstance } from '../../config';
 import { Context } from "../../Context/Context";
 import './enter.css'
+import styled from 'styled-components';
+import Fundo from "../../Assets/fundos/registo1.png"
 
+const Container = styled.div`
+      background-image: url(${Fundo});
+      background-size: cover;
+      width:100%;
+
+      .overlay  {
+        width:100vw;
+        height:100vh;
+        background:rgba(255, 255, 255, 0.8);
+    }
+`
 
 const Enter = () => {
   const userRef = useRef();
@@ -27,7 +40,7 @@ const Enter = () => {
   };
 
   return (
-    <div className="login">
+    <Container className="login">
       
       <div className="login2">
       <form className="loginForm" onSubmit={handleSubmit}>
@@ -56,7 +69,7 @@ const Enter = () => {
         </Link>
       </button>
       </div>
-    </div>
+    </Container>
   );
 }
 

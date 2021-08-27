@@ -1,9 +1,14 @@
 .writeCont {
-    width: 100%;
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 
   .write {
     padding-top: 50px;
+    width: 80%;
   }
   
   .writeImg {
@@ -11,13 +16,25 @@
     object-fit: cover;
   }
   
+
+  /*form inteiro */
   .writeForm {
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    
   }
   
+  .titleAndDesc {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+  }
+
   .writeFormGroup {
     display: flex;
     align-items: center;
+    width: 100%;
   }
   
   
@@ -38,7 +55,7 @@
     font-size: 30px;
     border: none;
     padding: 20px;
-    width: 70vw;
+    width: 100%;
   }
   
   .writeInput:focus {
@@ -66,20 +83,21 @@
     font-size: 16px;
   }
 
-  .writeCategory {
-    position: absolute;
-    top: 20px;
-    right: 0px;
-    color: white;
-    background-color: #6872E2;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 8px;
-    padding-right: 8px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    text-transform: uppercase;
-  }
   
+  .bgCatsCities{
+    background-color: #6872E2;
+    color: white;
+    padding: 12px;
+  }
+
+  .catscities{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    text-transform: capitalize;
+  }
+
+  .arrowDown {
+    position: absolute;
+    padding-right: 0;
+  }

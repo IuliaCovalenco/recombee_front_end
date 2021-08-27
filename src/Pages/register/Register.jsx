@@ -3,6 +3,21 @@ import { axiosInstance } from '../../config.js';
 import { useState, useEffect } from "react";
 import './register.css'
 import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import Fundo from "../../Assets/fundos/registo1.png"
+
+
+const Container = styled.div`
+      background-image: url(${Fundo});
+      background-size: cover;
+      width:100%;
+
+      .overlay  {
+        width:100vw;
+        height:100vh;
+        background:rgba(255, 255, 255, 0.8);
+    }
+`
 
 
 
@@ -75,7 +90,7 @@ const Register = () => {
 
   console.log(setCities)
   return (
-    <div className="register">
+    <Container className="register">
       
       <form className="registerForm" onSubmit={handleSubmit}>
       <span className="registerTitle">Regista-te na plataforma PressClub</span>
@@ -171,7 +186,7 @@ const Register = () => {
         </Link>
       </button>
       {error && <span style={{color:"red", marginTop:"10px"}}>Something went wrong!</span>}
-    </div>
+    </Container>
   );
 }
 
