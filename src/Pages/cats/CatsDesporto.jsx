@@ -66,7 +66,7 @@ const CatsDesporto = () => {
     for (let i=0; i<posts.length; i++) {
      //console.log(posts[i]['categories'][0])
       if (posts[i]['categories'][0] === 'desporto'){
-        if (arrayresultsDesporto.length <= 3 ){
+        if (arrayresultsDesporto.length <= 50 ){
         arrayresultsDesporto.push(posts[i])
         }
       }

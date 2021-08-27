@@ -66,7 +66,7 @@ const Cats = () => {
     for (let i=0; i<posts.length; i++) {
      //console.log(posts[i]['categories'][0])
        if (posts[i]['categories'][0] === 'cultura'){
-        if (arrayresultsCultura.length <= 3 ){
+        if (arrayresultsCultura.length <= 50 ){
         arrayresultsCultura.push(posts[i])
         }
       }

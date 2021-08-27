@@ -58,7 +58,7 @@ const CatsSustentabilidade = () => {
     for (let i=0; i<posts.length; i++) {
      //console.log(posts[i]['categories'][0])
      if (posts[i]['categories'][0] === 'sustentabilidade'){
-        if (arrayresultsSustentabilidade.length <= 3 ){
+        if (arrayresultsSustentabilidade.length <= 50 ){
         arrayresultsSustentabilidade.push(posts[i])
         }
       }

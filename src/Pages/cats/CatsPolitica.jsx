@@ -63,7 +63,7 @@ const CatsPolitica = () => {
     for (let i=0; i<posts.length; i++) {
      //console.log(posts[i]['categories'][0])
       if (posts[i]['categories'][0] === 'politica'){
-        if (arrayresults.length <= 3 ){
+        if (arrayresults.length <= 50 ){
           arrayresults.push(posts[i])
         }
       }

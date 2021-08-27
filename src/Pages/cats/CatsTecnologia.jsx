@@ -57,7 +57,7 @@ const CatsTecnologia = () => {
     for (let i=0; i<posts.length; i++) {
      //console.log(posts[i]['categories'][0])
       if (posts[i]['categories'][0] === 'tecnología'){
-        if (arrayresultsTecnologia.length <= 3 ){
+        if (arrayresultsTecnologia.length <= 50 ){
         arrayresultsTecnologia.push(posts[i])
         }
       }
