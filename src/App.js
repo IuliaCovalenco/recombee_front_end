@@ -21,7 +21,7 @@ function App() {
           <SecondaryTop/>
             <Switch>
                 <Route exact path='/' component={Home} />
-                <Route path='/write'>{!user ? <Write /> : <Enter />}</Route>
+                <Route path='/write'>{user ? <Write /> : <Enter />}</Route>
                 <Route path='/enter'>{!user ? <Home /> : <Enter />}</Route>
                 <Route path='/register'> {!user ? <Home /> : <Register />} </Route>
                 <Route path='/perfil'>{user ? <Perfil /> : <Enter />}</Route>
