@@ -18,7 +18,7 @@ const Post = ({ post }) => {
 
                             <a href="#">
                                 
-                            {post.photo &&  <img  className=" w-full h-80 no-repeat bg-no-repeat bg-center self-center inline-block  bg-red" style={{ backgroundImage: `url(${PF + post.photo})`, backgroundSize: 'cover' }} />}
+                            {post.photo &&  <img  className=" w-full h-80 no-repeat bg-no-repeat bg-center self-center inline-block  bg-red" style={{ backgroundImage: `url('${PF + post.photo}')`, backgroundSize: 'cover' }} />}
                             </a>
 
                             <div className="h-72">
