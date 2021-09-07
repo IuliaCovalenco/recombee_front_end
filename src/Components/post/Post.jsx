@@ -24,9 +24,9 @@ const Post = ({ post }) => {
                             <div className="h-72">
 
                             <h1 className="text-xs text-left pl-4 pt-8 font-bold uppercase">
-                            {post.categories.map(() => (
-                                <a className="no-underline hover:underline text-black" href="#">
-                                    #{post.categories}
+                            {post.categories.map((categorie) => (
+                                <a className="no-underline hover:underline text-black" href="#" >
+                                    #{categorie}
                                 </a>
                             ))}
 
