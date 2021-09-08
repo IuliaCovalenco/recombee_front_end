@@ -7,12 +7,12 @@ import Footer from "../../Components/footer/Footer";
 import Posts from "../../Components/posts/Posts";
 
 
-const Single = () => {
+const Single = (props) => {
 
-  const {user} = useContext(Context);
+  const { user } = useContext(Context);
   const [posts, setPosts] = useState([]);
 
-
+  console.log('props -> ', props)
   //reocmendados
   const [recommended, setRecommended] = useState([]);
   const [recommendedForUser, setRecommendedForUser] = useState([]);
@@ -21,13 +21,13 @@ const Single = () => {
   console.log(window.location.href)
   const id = window.location.href
 
-  
-  
- const postID = id.substr(22+5,id.length)
+
+
+  const postID = props.match.params.id
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axiosInstance.get("/posts", { 
+      const res = await axiosInstance.get("/posts", {
         posts: posts.categories
       });
       setPosts(res.data);
@@ -49,31 +49,31 @@ const Single = () => {
       console.log(res.data);
     };
     fetchPosts();
-    {user && (fetchRecommendedForUser())}
-    {user && (fetchRecommended())}
+    { user && (fetchRecommendedForUser()) }
+    { user && (fetchRecommended()) }
   }, []);
 
-    return (
-      <>
+  return (
+    <>
       <div className="single">
-        <SinglePost/>
+        <SinglePost />
       </div>
-          <div>
-          { user && 
+      <div>
+        {user &&
           <div className="mx-auto postsOrder" >
             <h1 className="pl-5 pt-60">Recomendados para si</h1>
-               <Posts posts={recommendedForUser}/>
+            <Posts posts={recommendedForUser} />
           </div>
-}
-          </div>
-      <div className="bg-gray-50">
-          <Footer/>
+        }
       </div>
-    
+      <div className="bg-gray-50">
+        <Footer />
+      </div>
 
-      </>
-    );
-  }
+
+    </>
+  );
+}
 
 
 export default Single;
