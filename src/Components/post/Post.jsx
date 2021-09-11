@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 const Post = ({ post }) => {
-
+    
+    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+    
+    
     const PF = "https://pressclubnode.herokuapp.com/images/";
 
     return (
@@ -54,7 +57,7 @@ const Post = ({ post }) => {
                             </header>
                             <footer className="flex text-sm text-left justify-between leading-none lg:pt-8 pb-4 p-4 md:p-4 w-full" style={{position: "absolute", bottom: "0"}}>
                                 <p className="text-grey-darker text-sm pt-4">
-                                {new Date(post.createdAt).toDateString()}
+                                {new Date(post.createdAt).toLocaleDateString('pt-PT', options)}
                                 </p>
 
                                 <span className="flex  place-self-end itens-right pt-4">
