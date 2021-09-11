@@ -43,9 +43,11 @@ const Post = ({ post }) => {
                                 </p>
                                 <a className="text-left no-underline hover:underline text-black" style={{position: "absolute", bottom: "0"}} href="#">
                                 <Link to={`/?user=${post.cities}`} className="link">
+                                {post.cities.map((citie) => (
                                     <p className=" pb-12 text-sm content-evenly">
-                                        <br></br>{ post.cities}
+                                        { citie}
                                     </p>
+                                     ))}
                                 </Link>
                                 </a>
 
