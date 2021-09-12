@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 const Post = ({ post }) => {
-    
+
     var options = { year: 'numeric', month: 'long', day: 'numeric' };
     
     
@@ -44,14 +44,12 @@ const Post = ({ post }) => {
                                     </a>
                                 </Link> 
                                 </p>
-                                <a className="text-left no-underline hover:underline text-black" style={{position: "absolute", bottom: "0"}} href="#">
-                                <Link to={`/?user=${post.cities}`} className="link">
+                                <a className="flex flex-wrap gap-2 g-4 text-left no-underline hover:underline text-black pb-12" style={{position: "absolute", bottom: "0"}} href="#">
                                 {post.cities.map((citie) => (
-                                    <p className=" pb-12 text-sm content-evenly">
-                                        { citie}
+                                    <p className="text-sm ">
+                                         { citie}
                                     </p>
                                      ))}
-                                </Link>
                                 </a>
 
                             </header>
