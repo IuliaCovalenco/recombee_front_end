@@ -32,6 +32,7 @@
       const [recommendedSustentabilidade, setRecommendedSustentabilidade] = useState([]);
       const [recommendedTecnology, setRecommendedTecnology] = useState([]);
       const [recommendedSaude, setRecommendedSaude] = useState([]);
+      const [recommendedForUser, setRecommendedForUser] = useState([]);
 
       const [cats, setCats] = useState([]);
       const [post] = useState([]);
@@ -127,6 +128,13 @@
         setRecommendedTecnology(res.data);
         console.log(res.data);
       };
+      const fetchRecommendedForUser = async () => {
+        const res = await axiosInstance.post("/recommended/recommended/personal", {
+          user: user._id
+        });
+        setRecommendedForUser(res.data);
+        console.log(res.data);
+      };
       getCats();
       fetchPosts();
       loadValor();
@@ -138,6 +146,7 @@
       {user && (fetchRecommendedEconomia())}
       {user && (fetchRecommendedSaude())}
       {user && (fetchRecommendedTecnologia())}
+      {user && (fetchRecommendedForUser()) }
     }, [search]);
 
   
@@ -192,6 +201,10 @@
             <div className="mx-auto postsOrder" >
               <h1 className="pl-5 pt-24">Destaques PressClub</h1>
                 <Posts posts={recommended}/>
+            </div>
+            <div className="mx-auto postsOrder" >
+                <h1 className="pl-5 pt-24">Outras Recomendações</h1>
+                <Posts posts={recommendedForUser}/>
             </div>
             <div className="mx-auto postsOrder" >
                 <h1 className="pl-5 pt-24">Cultura</h1>
