@@ -19,9 +19,13 @@ const Post = ({ post }) => {
 
                         <article className="overflow-hidden rounded-lg shadow-lg">
 
-                            <a href="#">
-                                
+                            <a>
+                            <Link to={`/post/${post._id}`} className="link"><a className="no-underline hover:underline text-black" >
+                                      
+                                 
                             {post.photo &&  <img  className=" w-full h-80 no-repeat bg-no-repeat bg-center self-center inline-block  bg-red" style={{ backgroundImage: `url('${PF + post.photo}')`, backgroundSize: 'cover' }} />}
+                            </a>
+                                </Link> 
                             </a>
 
                             <div className="h-72">
