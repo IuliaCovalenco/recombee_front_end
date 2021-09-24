@@ -5,11 +5,14 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Home, Write, Perfil, Enter, Register, Single, CatsCultura, CatsDesporto, CatsPolitica, CatsSaude, CatsSustentabilidade, CatsEconomia, CatsTecnologia } from './Pages';
 import { useContext } from "react";
 import { Context } from "./Context/Context";
+import ScrollToTop from './Components/scrollToTop/ScrollToTop.jsx';
 
 const Container = styled.div`
       width: 100%;
 `
-
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
 
 function App() {
   const user = useContext(Context);
@@ -20,6 +23,7 @@ function App() {
       <Router>
         <Topbar />
         <SecondaryTop />
+        <ScrollToTop/>
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/write'>{user ? <Write /> : <Enter />}</Route>
