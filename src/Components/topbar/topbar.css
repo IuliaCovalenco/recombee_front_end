@@ -23,6 +23,7 @@
 
 .topCenter {
     flex: 6;
+    justify-content: end;
 }
 
 

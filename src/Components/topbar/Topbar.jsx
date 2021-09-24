@@ -26,8 +26,6 @@
                             </div>
                         <div className="topCenter">
                             <ul className="topList">
-                                <li className="listItem">Meus Conteúdos</li>
-                                <li className="listItem">Área Multimédia</li>
                                 <li className="listItem"><Link className="link" to="/write">
                                 Escrever
                                 </Link></li>

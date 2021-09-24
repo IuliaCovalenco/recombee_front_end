@@ -1,15 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Fav from '../../Assets/icons/fav.png';
 import Share from '../../Assets/icons/Frame.png';
 import { Link } from "react-router-dom";
 
+
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+
+
 
 const Post = ({ post }) => {
 
-    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+    var options = { year: 'numeric', month: 'numeric', day: 'numeric' };
     
-    
+    const [showModal, setShowModal] = useState(false);
+    const [showModalTwo, setShowModalTwo] = useState(false);
+
     const PF = "https://pressclubnode.herokuapp.com/images/";
 
     return (
@@ -63,13 +68,101 @@ const Post = ({ post }) => {
                                 </p>
 
                                 <span className="flex  place-self-end itens-right pt-4">
-                                <a className="no-underline text-grey-darker hover:text-red-dark pr-2" href="#">
+                                <a onClick={() => setShowModalTwo(true)} className="no-underline text-grey-darker hover:text-red-dark pr-2" href="#">
                                     <span ><img src={Fav} /></span>
                                 </a>
-                                <a className="no-underline text-grey-darker hover:text-red-dark" href="#">
+                                <a onClick={() => setShowModal(true)} className="no-underline text-grey-darker hover:text-red-dark" href="#">
                                     <span ><img src={Share} /></span>
                                 </a>
                                 </span>
+
+                                {showModal ? ( 
+                                    <>
+                                <div
+                                    className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                                        <div className="relative w-auto my-8 mx-auto max-w-3xl">
+                                        {/*content*/}
+                                        <div className="border-0 justify-center items-center rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                                            {/*header*/}
+                                            <div className="flex justify-between p-5 border-solid rounded-t pt-10">
+                                            <h3 className="text-3xl font-semibold">
+                                                Obrigado
+                                            </h3>
+                                            <button
+                                                className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                                onClick={() => setShowModal(false)}
+                                            >
+                                                <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                                                ×
+                                                </span>
+                                            </button>
+                                            </div>
+                                            {/*body*/}
+                                            <div className="relative p-6 flex-auto">
+                                            <p className="mb-4 text-blueGray-500 text-lg leading-relaxed">
+                                                O conteúdo selecionado foi patilhado com sucesso
+                                            </p>
+                                            </div>
+                                            {/*footer*/}
+                                            <div className="flex  place-self-end itens-right pb-6">
+                                            <button
+                                                className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                type="button"
+                                                onClick={() => setShowModal(false)}
+                                            >
+                                                    Fechar
+                                            </button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                                    </>
+                                    ) :null }
+
+                                {showModalTwo ? ( 
+                                    <>
+                                <div
+                                    className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                                        <div className="relative w-auto my-8 mx-auto max-w-2xl">
+                                        {/*content*/}
+                                        <div className="border-0 justify-center items-center rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                                            {/*header*/}
+                                            <div className="flex justify-between p-5 border-solid rounded-t pt-10">
+                                            <h3 className="text-3xl font-semibold">
+                                                Obrigado
+                                            </h3>
+                                            <button
+                                                className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                                onClick={() => setShowModalTwo(false)}
+                                            >
+                                                <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                                                ×
+                                                </span>
+                                            </button>
+                                            </div>
+                                            {/*body*/}
+                                            <div className="relative p-6 flex-auto">
+                                            <p className="mb-4 text-blueGray-500 text-lg leading-relaxed">
+                                                O artigo selecionado foi adicionado a lista dos conteúdos que poderá ler mais tarde
+                                            </p>
+                                            </div>
+                                            {/*footer*/}
+                                            <div className="flex  place-self-end itens-right pb-6">
+                                            <button
+                                                className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                type="button"
+                                                onClick={() => setShowModalTwo(false)}
+                                            >
+                                                    Fechar
+                                            </button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                                    </>
+                                    ) :null }
                             </footer>
                             </div>
                         </article>
